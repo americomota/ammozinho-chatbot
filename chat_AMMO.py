@@ -68,7 +68,7 @@ if enviar and pergunta:
     st.session_state.historico.append(("Você", pergunta))
     resposta = perguntar_openai(pergunta)
     st.session_state.historico.append(("Ammozinho", resposta))
-    st.experimental_rerun()
+    st.rerun()
 
 # Exibir conversa
 for autor, mensagem in st.session_state.historico:
@@ -77,7 +77,7 @@ for autor, mensagem in st.session_state.historico:
 # Botão para limpar a conversa
 if st.button("🧹 Limpar conversa"):
     st.session_state.historico = []
-    st.experimental_rerun()
+    st.rerun()
 
 # Rodapé
 st.markdown("---")
